@@ -1,1 +1,74 @@
-# tree-sitter-manager.nvim
+# 🌳 tree-sitter-manager.nvim
+
+A lightweight Tree-sitter parser manager for Neovim.
+
+## 📜 Why this plugin?
+
+This plugin was created following the **archival of the [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) repository** in April 2026. This marked the end of convenient one-plugin parser management.
+
+**tree-sitter-manager.nvim** provides a minimal alternative for:
+- Installing and removing Tree-sitter parsers
+- Automatically copying queries for syntax highlighting
+- Managing parsers through a clean TUI interface
+
+## ✨ Features
+
+- 🎯 Install parsers directly from Tree-sitter repositories
+- ⚡ Dynamic FileType autocmd registration for installed parsers
+- 🔧 Works with any plugin manager (lazy, packer, vim-plug, native packages)
+
+## 📋 Requirements
+
+### Mandatory
+- **Neovim 0.12+** 
+- **tree-sitter CLI** 
+- **git** (for cloning parser repositories)
+- **C compiler** (gcc/clang for building parsers)
+
+### Optional
+- Nerd Font (for proper display of icons ✅❌📦)
+
+## 📦 Installation
+
+### lazy.nvim
+```lua
+{
+  "github.com/romus204/tree-sitter-manager.nvim",
+  dependencies = {}, -- tree-sitter CLI must be installed system-wide
+  config = function()
+    require("tree-sitter-manager").setup({
+      -- Optional: custom paths
+      -- parser_dir = vim.fn.stdpath("data") .. "/site/parser",
+      -- query_dir = vim.fn.stdpath("data") .. "/site/queries",
+    })
+  end
+}
+```
+
+## 🚀 Usage
+
+`:TSManager` - Open the parser management interfacek
+
+## Keybindings
+	
+`i` - Install parser under cursor
+`x` - Remove parser under cursor
+`r` - Refresh installation status
+`q / <Esc>` - Close window
+
+## 📚 Queries
+Syntax highlighting queries (highlights.scm, injections.scm, etc.) were sourced from the archived https://github.com/nvim-treesitter/nvim-treesitter
+ repository and placed in `runtime/queries/`.
+
+## ⚠️ Known Limitations
+
+    Unix-first development: Primarily tested on macOS/Linux. Windows support may require additional testing.
+    Requires tree-sitter CLI: Ensure tree-sitter is available in your $PATH.
+    No auto-updates: To update a parser, remove it (x) and reinstall (i).
+
+## 🤝 Contributing
+Pull requests are welcome! Especially for:
+
+    Adding new languages to repos.lua
+    UI/UX improvements
+    Bug fixes
