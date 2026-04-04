@@ -33,7 +33,7 @@ This plugin was created following the **archival of the [nvim-treesitter/nvim-tr
 ### lazy.nvim
 ```lua
 {
-  "github.com/romus204/tree-sitter-manager.nvim",
+  "romus204/tree-sitter-manager.nvim",
   dependencies = {}, -- tree-sitter CLI must be installed system-wide
   config = function()
     require("tree-sitter-manager").setup({
@@ -47,14 +47,14 @@ This plugin was created following the **archival of the [nvim-treesitter/nvim-tr
 
 ## 🚀 Usage
 
-`:TSManager` - Open the parser management interfacek
+`:TSManager` - Open the parser management interface
 
-## Keybindings
+## ⌨️ Keybindings
 	
-`i` - Install parser under cursor
-`x` - Remove parser under cursor
-`r` - Refresh installation status
-`q / <Esc>` - Close window
+`i` - Install parser under cursor  
+`x` - Remove parser under cursor  
+`r` - Refresh installation status  
+`q / <Esc>` - Close window  
 
 ## 📚 Queries
 Syntax highlighting queries (highlights.scm, injections.scm, etc.) were sourced from the archived https://github.com/nvim-treesitter/nvim-treesitter
@@ -62,13 +62,13 @@ Syntax highlighting queries (highlights.scm, injections.scm, etc.) were sourced 
 
 ## ⚠️ Known Limitations
 
-    Unix-first development: Primarily tested on macOS/Linux. Windows support may require additional testing.
-    Requires tree-sitter CLI: Ensure tree-sitter is available in your $PATH.
-    No auto-updates: To update a parser, remove it (x) and reinstall (i).
+- Unix-first development: Primarily tested on macOS/Linux. Windows support may require additional testing.
+- Requires tree-sitter CLI: Ensure tree-sitter is available in your $PATH.
+- No auto-updates: To update a parser, remove it (x) and reinstall (i).
 
 ## 🤝 Contributing
 Pull requests are welcome! Especially for:
 
-    Adding new languages to repos.lua
-    UI/UX improvements
-    Bug fixes
+- Adding new languages to repos.lua
+- UI/UX improvements
+- Bug fixes
